@@ -63,9 +63,6 @@ To run this project, ensure you have:
 
 ### AUTHORS
 
--   Kirui Aron
--   [Email](mailto:kirui_kirui@college.harvard.edu)
--   [Email](mailto:shallonuwase@college.harvard.edu)
-
-
+-   Kirui Aron - [Email](mailto:kirui_kirui@college.harvard.edu)
+-   Uwase Shallon - [Email](mailto:shallonuwase@college.harvard.edu)
 
