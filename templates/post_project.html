@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post Project
+{% endblock %}
+
+{% block main %}
+<div class="container white-text">
+    <h1 class="my-4">Post Your Project</h1>
+    <form action="/post_project" method="post">
+        <div class="form-group">
+            <label for="title" class="fw-bold fs-4">Project Title</label>
+            <input autocomplete="off" autofocus type="text" class="form-control" placeholder="title" name="title">
+        </div>
+        <div class="form-group">
+            <label for="description" class="fw-bold fs-4">Project Description</label>
+            <p>What inspired you, what did you learn, what challenges did you face? <br>What languages, frameworks, platforms, cloud services, databases, APIs, or other technologies did you use?></p>
+            <textarea class="form-control" placeholder="description" name="description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="youtube_link" class="fw-bold fs-4">YouTube Link</label>
+            <input type="url" class="form-control" placeholder="youtube_link" name="youtube_link">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Post Project</button>
+    </form>
+</div>
+{% endblock %}

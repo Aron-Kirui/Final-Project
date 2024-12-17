@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+    <section class="w-100 vh-70 d-flex flex-column justify-content-center align-items-center text-white fs-1">
+        {% if not username %}
+            <h3 style="font-size: 1.5em">Welcome to Project VoteHub!</h3>
+            <h3 style="font-size: 1.3em">Your next big idea starts here...</h3>
+        {% else %}
+            <h1 style="font-size: 1.5em">Hello <span>{{ username|capitalize}}</span>!</h1>
+            <h3 style="font-size: 1.5em">Create. Share. Vote</h3>
+            <h3 style="font-size: 1.3em">Discover the best projects...</h3>
+            {% if projects %}
+            {% for project in projects %}
+                {% if project.votes > 0 %}
+                    <h1 class="my-4 best-project">The best project was <span>{{ project.title }}!</span></h1>
+                    <div class="container white-text mt-5" data-votes="{{ project.votes }}">
+                        <div class="project card shadow mb-4">
+                            <div class="card-body">
+                                <h2 class="card-title text-center text-primary mb-4">{{ project.title }}</h2>
+                                <div class="row align-items-center">
+                                    <div class="col-md-8 mb-3 mb-md-0">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe
+                                                src="{{ project.youtube_link }}"
+                                                title="{{ project.title }}"
+                                                allowfullscreen
+                                                frameborder="0">
+                                            </iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="text-secondary">Description</h5>
+                                    <p class="text-muted" style="font-size: 0.5em"> {{ project.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        {% endif %}
+    </section>
+{% endblock %}

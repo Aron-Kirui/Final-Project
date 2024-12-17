@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Admin
+{% endblock %}
+
+{% block main %}
+<form action="/admin" method="post" class="white-text">
+    <label for="posting_status">Allow Posting:</label>
+    <input type="checkbox" id="posting_status" name="posting_status" {% if status.posting_status %}checked{% endif %}>
+    <br>
+    <label for="voting_status">Allow Voting:</label>
+    <input type="checkbox" id="voting_status" name="voting_status" {% if status.voting_status %}checked{% endif %}>
+    <br>
+    <button type="submit" class="btn btn-primary mt-3">Update Status</button>
+</form>
+{% endblock %}
