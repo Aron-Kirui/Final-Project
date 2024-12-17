@@ -1,0 +1,128 @@
+body{
+    background: url('/static/project.jpeg'), linear-gradient(rgba(0, 0, 50, 0.5), rgba(0, 0, 50, 0.5));
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: auto;
+}
+main {
+    flex: 1;
+    overflow-y: auto;
+}
+@media(max-width: 990px){
+    .sidebar{
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
+
+.hover-effect:hover {
+    color: #01FFFF;
+    background-color: #000;
+    box-shadow: 0 0 10px #01FFFF, 0 0 20px #01FFFF, 0 0 30px #01FFFF;
+    transform: scale(0.95);
+    transition: all 0.3s ease-in-out;
+}
+
+.white-text {
+    color: white;
+}
+h1{
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+h1 span{
+    color: #01FFFF;
+}
+h3{
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+}
+.dynamic-logo{
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.dynamic-logo span {
+    color: #01FFFF;
+}
+@keyframes slideRight{
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideBottom{
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.project {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+
+.project h2 {
+    font-weight: bold;
+}
+
+.project iframe {
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.text-primary {
+    color: #007bff !important;
+}
+
+.text-secondary {
+    font-weight: 500;
+    color: #007bff !important;
+}
+
+.card {
+    border: none;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.best-project span{
+    color: aqua;
+}
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
